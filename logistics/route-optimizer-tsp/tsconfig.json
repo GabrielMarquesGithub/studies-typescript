@@ -5,12 +5,13 @@
 		"baseUrl": ".",
 		"paths": {
 			"@configs/*": ["./src/configs/*"],
-			"@modules/*": ["./src/modules/*"],
 			"@plugins/*": ["./src/plugins/*"],
 			"@schemas/*": ["./src/schemas/*"],
 			"@types": ["./src/types.ts"],
 			"@app": ["./src/app.ts"],
-			"@server": ["./src/server.ts"]
+			"@server": ["./src/server.ts"],
+			"@modules/*": ["./src/modules/*"],
+			"@providers/*": ["./src/providers/*"]
 		}
 	},
 	"include": ["src/**/*.ts"]

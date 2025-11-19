@@ -13,7 +13,7 @@ const handlersPluginAsync: FastifyPluginAsync = async (app: FastifyInstance) => 
 
 		if (hasZodFastifySchemaValidationErrors(error)) {
 			statusCode = 400;
-			message = "Erro de validação dos dados fornecidos";
+			message = error.message;
 		}
 
 		if (isResponseSerializationError(error)) {
