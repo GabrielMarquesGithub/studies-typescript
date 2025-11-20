@@ -38,7 +38,7 @@ export function buildApp(options: IBuildAppOptions = {}): FastifyTypedInstance {
 	app.register(handlersPlugin);
 
 	// --- Módulos ---
-	app.register(optimizationModule, { prefix: "/api/v1" });
+	app.register(optimizationModule, { prefix: "/api/v1/optimize" });
 
 	return app;
 }

@@ -1,0 +1,31 @@
+{
+	"startNodeId": "São Paulo",
+	"endNodeId": "Santos",
+	"stopsNodeIds": ["Campinas", "São Bernardo do Campo", "Santo André"],
+	"edges": [
+		{
+			"from": "São Paulo",
+			"to": "Campinas",
+			"distance": 100,
+			"roadCondition": "GOOD"
+		},
+		{
+			"from": "Campinas",
+			"to": "São Bernardo do Campo",
+			"distance": 100,
+			"roadCondition": "GOOD"
+		},
+		{
+			"from": "São Bernardo do Campo",
+			"to": "Santo André",
+			"distance": 100,
+			"roadCondition": "GOOD"
+		},
+		{
+			"from": "Santo André",
+			"to": "Santos",
+			"distance": 100,
+			"roadCondition": "GOOD"
+		}
+	]
+}
