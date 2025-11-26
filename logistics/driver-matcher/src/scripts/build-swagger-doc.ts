@@ -6,7 +6,8 @@ async function buildSwaggerDoc() {
 	console.log("🔵 Gerando especificação OpenAPI...");
 
 	const app = buildApp({
-		logger: false
+		logger: false,
+		skipDatabase: true
 	});
 
 	await app.ready();

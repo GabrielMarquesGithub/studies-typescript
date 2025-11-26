@@ -3,6 +3,7 @@ import { z } from "zod";
 
 const envSchema = z.object({
 	NODE_ENV: z.enum(["dev", "prod", "test"], "NODE_ENV deve ser 'dev', 'test' ou 'prod'"),
+	DB_URL: z.url("DB_URL deve ser uma URL válida").nonempty("DB_URL é obrigatório"),
 	SERVER_PORT: z.coerce.number("SERVER_PORT deve ser um número"),
 	SERVER_HOST: z.string("SERVER_HOST é inválido").nonempty("SERVER_HOST é obrigatório")
 });

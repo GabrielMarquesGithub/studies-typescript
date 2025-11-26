@@ -3,21 +3,26 @@ import fastifyHelmet from "@fastify/helmet";
 import fastifyRateLimit from "@fastify/rate-limit";
 import { helloModule } from "@modules/hello";
 import { handlersPlugin } from "@plugins/handlers";
+import { prismaPlugin } from "@plugins/prisma";
 import { swaggerPlugin } from "@plugins/swagger";
 import type { FastifyTypedInstance } from "@types";
 import Fastify, { type FastifyServerOptions } from "fastify";
 import { serializerCompiler, validatorCompiler, type ZodTypeProvider } from "fastify-type-provider-zod";
 
-type IBuildAppOptions = FastifyServerOptions;
+type IBuildAppOptions = FastifyServerOptions & {
+	skipDatabase?: boolean;
+};
 
 export function buildApp(options: IBuildAppOptions = {}): FastifyTypedInstance {
+	const { skipDatabase, ...rest } = options;
+
 	const app = Fastify({
 		pluginTimeout: 35000,
 		logger: {
 			level: env.NODE_ENV === "dev" ? "debug" : "info",
 			transport: env.NODE_ENV === "dev" ? { target: "pino-pretty" } : undefined
 		},
-		...options
+		...rest
 	}).withTypeProvider<ZodTypeProvider>();
 
 	// --- Compiladores de validação ---
@@ -32,6 +37,9 @@ export function buildApp(options: IBuildAppOptions = {}): FastifyTypedInstance {
 	});
 
 	// --- Plugins locais ---
+	if (!skipDatabase) {
+		app.register(prismaPlugin);
+	}
 	app.register(swaggerPlugin);
 
 	// --- Handlers ---

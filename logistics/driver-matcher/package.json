@@ -15,6 +15,10 @@
 		"services:up": "docker compose up -d",
 		"services:down": "docker compose down",
 		"services:stop": "docker compose stop",
+		"migration:dev": "npx --no prisma migrate dev",
+		"migration:run": "npx --no prisma migrate deploy",
+		"migration:reset": "npx --no prisma migrate reset --force",
+		"db:client": "npx --no prisma generate",
 		"lint:check": "biome check",
 		"lint:fix": "biome check --write"
 	},
@@ -23,6 +27,7 @@
 		"@fastify/rate-limit": "^10.3.0",
 		"@fastify/swagger": "^9.6.1",
 		"@fastify/swagger-ui": "^5.2.3",
+		"@prisma/adapter-pg": "^7.0.1",
 		"@vitest/coverage-v8": "^4.0.12",
 		"axios": "^1.13.2",
 		"dotenv": "^17.2.3",

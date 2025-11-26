@@ -11,8 +11,9 @@
 			"@plugins/*": ["./src/plugins/*"],
 			"@modules/*": ["./src/modules/*"],
 			"@schemas/*": ["./src/schemas/*"],
-			"@tests/*": ["./tests/*"]
+			"@tests/*": ["./tests/*"],
+			"@prisma/*": ["./src/generated/prisma/*"]
 		}
 	},
-	"include": ["src/**/*.ts", "tests/**/*.ts"]
+	"include": ["src/**/*.ts", "tests/**/*.ts", "prisma.config.ts"]
 }
