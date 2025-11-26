@@ -19,7 +19,7 @@ async function buildSwaggerDoc() {
 	const docsDir = path.resolve(__dirname, "..", "..", "docs");
 	await fs.mkdir(docsDir, { recursive: true });
 
-	const outputPath = path.join(docsDir, "base-api.json");
+	const outputPath = path.join(docsDir, "api.json");
 	await fs.writeFile(outputPath, specJson, "utf-8");
 
 	console.log(`🟢 Especificação OpenAPI salva em: ${outputPath}`);

@@ -84,7 +84,7 @@ Siga estas instruções para obter uma cópia do projeto em execução na sua m�
 ### Comandos Úteis
 
 -   **Gerar documentação OpenAPI:**
-    Cria o arquivo `docs/base-api.json` compatível com a especificação OpenAPI.
+    Cria o arquivo `docs/api.json` compatível com a especificação OpenAPI.
     ````bash
     npm run build:docs
     ````

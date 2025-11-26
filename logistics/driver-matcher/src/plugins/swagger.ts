@@ -7,7 +7,7 @@ import { jsonSchemaTransform } from "fastify-type-provider-zod";
 const swaggerPluginAsync: FastifyPluginAsync = async (app) => {
 	app.register(fastifySwagger, {
 		openapi: {
-			openapi: "3.1.0",
+			openapi: "3.0.3",
 			info: {
 				title: "API",
 				description: "Documentação da API",
