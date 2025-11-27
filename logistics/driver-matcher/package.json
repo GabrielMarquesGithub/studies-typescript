@@ -39,6 +39,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "^2.3.6",
 		"@prisma/client": "^7.0.1",
+		"@testcontainers/postgresql": "^11.8.1",
 		"@types/node": "^24.10.1",
 		"concurrently": "^9.2.1",
 		"fastify-tsconfig": "^3.0.0",

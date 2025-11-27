@@ -17,7 +17,7 @@ const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const prismaPluginAsync: FastifyPluginAsync = async (app) => {
 	const adapter = new PrismaPg({
-		connectString: env.DB_URL
+		connectionString: env.DB_URL
 	});
 	const prisma = new PrismaClient({ adapter });
 

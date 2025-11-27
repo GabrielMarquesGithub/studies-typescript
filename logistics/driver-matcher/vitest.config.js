@@ -5,11 +5,13 @@ export default defineConfig({
 	plugins: [tsconfigPaths()],
 	test: {
 		environment: "node",
-		fileParallelism: true,
+		fileParallelism: false,
 		coverage: {
 			provider: "v8",
 			enabled: true
 		},
-		include: ["tests/**/*.test.ts"]
+		include: ["tests/**/*.test.ts"],
+		globals: true,
+		globalSetup: ["tests/utils/global-setup.ts"]
 	}
 });
