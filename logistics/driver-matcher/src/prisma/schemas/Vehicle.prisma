@@ -1,0 +1,22 @@
+enum VehicleType {
+    SEMI_TRAILER // Carreta
+    SEMI_TRAILER_LS // Carreta LS
+    EXTENDED_SEMI_TRAILER // Vanderléia
+    B_DOUBLE // Bitrem
+    ROAD_TRAIN // Rodotrem
+}
+
+model Vehicle {
+    id       String      @id @default(uuid(7))
+    type     VehicleType
+    capacity Int
+
+    createdAt DateTime @default(now()) @map("created_at")
+    updatedAt DateTime @updatedAt @map("updated_at")
+
+    driverId String @map("driver_id")
+    driver   Driver @relation(fields: [driverId], references: [id], onDelete: Cascade)
+
+    @@index([type])
+    @@map("vehicles")
+}

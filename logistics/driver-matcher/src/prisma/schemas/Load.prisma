@@ -1,0 +1,23 @@
+enum LoadStatus {
+    PENDING
+    IN_TRANSIT
+    DELIVERED
+    CANCELLED
+}
+
+model Load {
+    id          String     @id @default(uuid(7))
+    origin      String     @db.VarChar(255)
+    destination String     @db.VarChar(255)
+    weight      Float
+    value       Float
+    status      LoadStatus
+
+    lat Float
+    lng Float
+
+    createdAt DateTime @default(now()) @map("created_at")
+    updatedAt DateTime @updatedAt @map("updated_at")
+
+    @@map("loads")
+}
